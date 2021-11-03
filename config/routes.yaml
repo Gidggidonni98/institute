@@ -1,0 +1,19 @@
+findAll:
+   path: /schools
+   controller: App\Controller\SchoolController::findAll
+
+create_school:
+  path: /school/create
+  controller: App\Controller\SchoolController::create_school
+
+school_by_id:
+  path: /school/{id}
+  controller: App\Controller\SchoolController::school_by_id
+
+update_school:
+  path: /school/update/{id}
+  controller: App\Controller\SchoolController::update_school
+
+delete_school:
+  path: /school/delete/{id}
+  controller: App\Controller\SchoolController::delete_school
