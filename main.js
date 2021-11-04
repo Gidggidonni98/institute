@@ -69,10 +69,14 @@ const fill = listSchool => {
                 <td>${f}</td>
                 <td>${h}</td>
                 <td>${listSchool[i].status ? "Activo" : "Inactivo"}</td>
-                <td>
-                    <button type="button" onclick= getDetails(${listSchool[i].id}) class="btn btn-info" data-bs-toggle="modal" data-bs-target="#details">Detalles</button>
-                    <button type="button" onclick= getInfoUpdate(${listSchool[i].id}) class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#update"><i class="fa fa-edit"></i> Modificar</button>
-                    <button type="button" onclick= getId(${listSchool[i].id}) class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete">Eliminar</button>
+                <td style="text-align: center;">
+                    <button type="button" onclick= getDetails(${listSchool[i].id}) class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#details"><i class="far fa-file-alt"></i></button>
+                </td>
+                <td style="text-align: center;">
+                <button type="button" onclick= getInfoUpdate(${listSchool[i].id}) class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#update"><i class="fa fa-edit"></i></button>
+                </td>
+                <td style="text-align: center;">
+                <button type="button" onclick= getId(${listSchool[i].id}) class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete"><i class="fas fa-trash-alt"></i></button>                
                 </td>
             </tr>
             `;
@@ -118,5 +122,18 @@ const deleteSchool = async (id) => {
         getSchools();
     });
 };
+const registerSchool = async() =>{
+    let name = document.getElementById('name_register').value;
+    let street = document.getElementById('street_register').value;
+    var date = Date.now();
+    let created = document.getElementById(date);
 
+    await $.ajax({
+        type: 'POST',
+        url: 'http://localhost/institute/public/index.php/school/create' ,
+        data: {name, street, created}
+    }).done(function(res){
+        getSchools();
+    });
+};
 getSchools();

@@ -10,24 +10,63 @@
     <!-- FONT AWESOME -->
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 </head>
-<body>
-    <div class="text-center" style=" margin-bottom: 30px;">
-        <h1>Listado de Gatitos</h1>
-    </div>
-    <table id="table" class="table table-hover">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Nombre</th>
-                <th>Direccion</th>
-                <th>Creado</th>
-                <th>Actualizado</th>
-                <th>Estado</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
 
+
+<body>
+    <nav></nav>
+
+     <!-- REGISTRO -->
+<div class="container">
+    <div style="margin-left: 25%; margin-top: 30px; margin-bottom: 30px;">
+        <div class="card text-center card text-dark bg-light mb-3" style="padding-top: 25px; width: 70%;">
+            <div class="card-header" >
+                <h4>Registro de escuelas</h4>
+            </div>
+            <div class="card-body">
+                <form action="javascript:void(0);" onsubmit="registerSchool();">
+                    <div class="row">
+                        <div class="col-6">
+                            <label  class="form-label">Nombre de la escuela</label>
+                            <input type="text" class="form-control" id="name_register" aria-describedby="name_register">                            
+                        </div>
+                        <div class="col-6">
+                            <label  class="form-label">Calle</label>
+                            <input type="text" class="form-control" id="street_register" aria-describedby="street_register">
+                        </div>
+                    </div>
+                    <br>
+                    <button id="registrar" class="btn btn-success " style="float: right;" type="submit">Registrar</button>
+                </form>
+            </div>
+    </div>
+    
+</div>
+<div class="text-center" style=" margin-bottom: 30px;">
+    <h1>Listado de Gatitos</h1>
+</div>
+
+ <!-- TABLA DE CONTENIDO -->
+    
+    <div class="container-fluid">
+        <table id="table" class="table table-bordered table-secondary ">
+            <thead>
+                <tr class="table-dark">
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Direccion</th>
+                    <th>Creado</th>
+                    <th>Actualizado</th>
+                    <th>Estado</th>
+                    <th style="text-align: center;">Detalles</th>
+                    <th style="text-align: center;">Actualizar</th>
+                    <th style="text-align: center;">Desactivar</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    
+    </div>
+  
   
     
     <!-- Modal Details-->
